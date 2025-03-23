@@ -1,0 +1,16 @@
+cv_generator_app/
+│
+├── app/
+│   ├── templates/              # Jinja2 HTML templates (country-specific CVs)
+│   │   └── templates/
+│   ├── static/                 # CSS, JS, Bootstrap files
+│   ├── routes.py               # Flask routes
+│   ├── models.py               # Database models (SQLite)
+│   ├── forms.py                # WTForms for user input
+│   └── utils.py                # Utility functions (PDF generation, S3 upload)
+│
+├── config.py                   # AWS and app configuration
+├── app.db                      # SQLite DB file
+├── requirements.txt
+├── run.py                      # App entry point
+└── README.md
