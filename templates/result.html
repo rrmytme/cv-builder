@@ -1,0 +1,22 @@
+<!-- templates/result.html -->
+{% extends "base.html" %}
+
+{% block title %}CV Result{% endblock %}
+
+{% block content %}
+  <div class="alert alert-success">
+    <h4 class="alert-heading">CV Generated Successfully!</h4>
+    <p>You can now preview or download your CV.</p>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-header">
+      CV Preview
+    </div>
+    <div class="card-body">
+      {{ rendered_html | safe }}
+    </div>
+  </div>
+
+  <a href="/" class="btn btn-primary">Create Another CV</a>
+{% endblock %}

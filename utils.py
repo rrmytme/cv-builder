@@ -45,7 +45,7 @@ def select_template(country):
 
     # Normalize and match
     country = country.strip().lower()
-    return templates.get(country, "generic_template.html")
+    return templates.get(country, "default.html")
 
 
 def generate_pdf_from_html(html_content, output_filename):

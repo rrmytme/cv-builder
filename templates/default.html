@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }} - CV</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        td {
+            vertical-align: top;
+            padding: 20px;
+        }
+        .left {
+            width: 70%;
+            background: #fff;
+        }
+        .right {
+            width: 30%;
+            background-color: #0D1B2A;
+            color: #fff;
+        }
+        h1 {
+            font-size: 28px;
+            color: #0D1B2A;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #0D1B2A;
+            margin-top: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 16px;
+            color: #fff;
+            margin-top: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        p, li {
+            font-size: 14px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .small {
+            font-size: 12px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="left">
+                <h1>{{ name }}</h1>
+
+                <h2>Profile</h2>
+                <p>{{ profile }}</p>
+
+                <h2>Employment History</h2>
+                {% for item in employment_history %}
+                    <p>{{ item }}</p>
+                {% endfor %}
+            </td>
+
+            <td class="right">
+                <h3>Details</h3>
+                <p class="small">
+                  {{ contact.phone }}<br>
+                  {{ contact.email }}
+                </p>
+                <p class="small"><strong>LinkedIn:</strong><br>{{ contact.linkedin }}</p>
+                <p class="small"><strong>GitHub:</strong><br>{{ contact.github }}</p>
+
+                <h3>Education</h3>
+                    {% for edu in education %}
+                    <p class="small">
+                        <b>{{ edu.degree }}</b>
+                        {{ edu.university }}
+                        {{ edu.locationYear }}<br>
+                      </p>
+                    {% endfor %}
+
+                <h3>Key Skills</h3>
+                <ul>
+                    {% for skill in key_skills %}
+                        <li class="small">{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h3>Tools & Technologies</h3>
+                <ul>
+                    {% for tool in tools_technologies %}
+                        <li class="small">{{ tool }}</li>
+                    {% endfor %}
+                </ul>                
+
+                <h3>Certifications</h3>
+                    {% for cert in certifications %}
+                    <p class="small">
+                        <b>{{ cert.certificate }}</b>
+                        {{ cert.instituteYear }}<br>
+                      </p>
+                    {% endfor %}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+ 
