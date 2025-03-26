@@ -68,7 +68,7 @@ def generate_cv():
     # Upload to S3
     # pdf_url = upload_to_s3(pdf_path)
 
-    return render_template("result.html", rendered_html)
+    return render_template("result.html", rendered_html=rendered_html), pdf_path
 
 
 if __name__ == "__main__":
